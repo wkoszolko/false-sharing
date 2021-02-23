@@ -3,7 +3,9 @@ package com.koszoko.becomeexpert.falsesharing;
 import jdk.internal.vm.annotation.Contended;
 
 public class Counter {
+    @Contended
     private volatile long counterA = 0L;
+    @Contended
     private volatile long counterB = 0L;
 
     public long incrementA() {

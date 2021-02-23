@@ -1,16 +1,14 @@
 package com.koszoko.becomeexpert.falsesharing;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 public class CounterAffectedByFalseSharing {
-    private volatile AtomicLong counterA = new AtomicLong();
-    private volatile AtomicLong counterB = new AtomicLong();
+    private volatile long counterA = 0L;
+    private volatile long counterB = 0L;
 
     public long incrementA() {
-        return counterA.incrementAndGet();
+        return counterA++;
     }
 
     public long incrementB() {
-        return counterB.incrementAndGet();
+        return counterB++;
     }
 }

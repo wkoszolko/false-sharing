@@ -1,17 +1,10 @@
 package com.koszoko.becomeexpert.falsesharing;
 
 import java.util.concurrent.TimeUnit;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Group;
-import org.openjdk.jmh.annotations.GroupThreads;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Warmup;
 
-@Fork(value = 1)
-@Warmup(iterations = 20)
+import org.openjdk.jmh.annotations.*;
+
+@Fork(value = 1, jvmArgs = "-XX:-RestrictContended")
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class FalseSharingBenchmark {
 
