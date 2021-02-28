@@ -4,21 +4,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.*;
 
-@Fork(value = 1, jvmArgs = "-XX:-RestrictContended")
+@Fork(value = 1)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class FalseSharingBenchmark {
 
-    private static volatile long simpleLongCounter = 0L;
     private static final Counter COUNTER = new Counter();
     private static final CounterAffectedByFalseSharing COUNTER_AFFECTED_BY_FALSE_SHARING = new CounterAffectedByFalseSharing();
-
-    @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @Group("longCounter")
-    @GroupThreads(1)
-    public long incrementLong() {
-        return simpleLongCounter++;
-    }
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
