@@ -5,4 +5,3 @@ ARG JAR_FILE=target/false-sharing-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 RUN mkdir /opt/app
 COPY ${JAR_FILE} /opt/app/app.jar
 ENTRYPOINT ["perf", "stat", "-d"]
-#"java", "-jar", "-XX:-RestrictContended",  "/opt/app/app.jar
