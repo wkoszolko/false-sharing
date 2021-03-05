@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.*;
 
-@Fork(value = 1)
+@Fork(value = 1, jvmArgs = "-XX:-RestrictContended")
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class FalseSharingBenchmark {
 
