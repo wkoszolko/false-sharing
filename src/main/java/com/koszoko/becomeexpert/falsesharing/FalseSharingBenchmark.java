@@ -8,24 +8,7 @@ import org.openjdk.jmh.annotations.*;
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class FalseSharingBenchmark {
 
-    private static final Counter COUNTER = new Counter();
     private static final CounterAffectedByFalseSharing COUNTER_AFFECTED_BY_FALSE_SHARING = new CounterAffectedByFalseSharing();
-
-    @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @Group("contended")
-    @GroupThreads(1)
-    public long contendedIncrementA() {
-        return COUNTER.incrementA();
-    }
-
-    @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @Group("contended")
-    @GroupThreads(1)
-    public long contendedIncrementB() {
-        return COUNTER.incrementB();
-    }
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
