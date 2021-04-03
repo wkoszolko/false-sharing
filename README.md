@@ -2,6 +2,8 @@
 
 The repository to demonstrate the impact of false sharing on performance. 
 
+[Blog post about false-sharing](https://wkoszolko.github.io/2021/03/10/false-sharing/)
+
 ## Benchmark results
 
 Two classes were compared. One class was affected by false sharing, 
